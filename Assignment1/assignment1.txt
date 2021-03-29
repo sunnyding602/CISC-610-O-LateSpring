@@ -1,0 +1,30 @@
+
+Link to my video: https://youtu.be/UUnylIve1ds
+
+References:
+
+```
+https://www.geeksforgeeks.org/insertion-sort/
+TSP: https://www.youtube.com/watch?v=hh-uFQ-MGfw
+Radix Sort: https://www.youtube.com/watch?v=JMlYkE8hGJM
+Counting Sort: https://www.youtube.com/watch?v=pEJiGC-ObQE
+```
+
+Script:
+1. insertion sort (P)
+	- what's insertion sort
+	- briefly describe the algorithm 
+	- explain why it's O(n^2)
+2. Traveling Salesman Problem (NP)
+	- what's TSP
+	- Brute Force, O(n!)
+	- DP, O(2^n)
+3. Finding the sum of all values in a 3-D Array (n x n x n)  (P)
+	- O(n^3)
+	- simple one, we simply need to loop through every number in the 3-D Array
+4. Radix Sort (P)
+	- using counting sort as subroutine
+	- O(d(n+b)), d=number of digits, n= numbers in the array, b= base (10)
+5. Brute Force Password Cracker (NP)
+	- all lower case characters 
+	- 26*26*26*26*26*26 ~ 26^n
