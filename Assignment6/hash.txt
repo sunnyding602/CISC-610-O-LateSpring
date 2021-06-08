@@ -1,0 +1,72 @@
+Assignment 7
+
+1. A hash table that hashes all values to the same slot is essentially equivalent to what other data structure?
+Answer: linked list
+
+2. Analyze the hashing functions that were discussed in the lecture slides. Elaborate on the benefits and drawbacks of each function. (At least 3 of each)
+Answer:
+Lose Lose
+    benefits:
+    (1) Fast, because it's using math only
+    (2) Very simple
+    (3) Used by many programmers
+    drawbacks:
+    (1) Cache collison chance is high, "drx" and "xrd" will result in the same hash
+    (2) Used by many people (without testing and thinking about it)
+    (3) The name is bad... Who wants to lose.
+DJB2
+    benefits:
+    (1) Fast, because it's using math only
+    (2) Good distribution of hashs
+    (3) One of the best string hash functions
+
+    drawbacks:
+    (1) Use a magic of number 33, which has even been adequately explained.
+    (2) This function still introduces collisons
+    (3) the hash can end up being a really large number 
+SDBM
+    benefits:
+    (1) Fast, because it only uses math
+    (2) Used in the open source SDBM project, so it's well tested
+    (3) Good over-all distribution for many different data sets
+    (4) Used in berkeley db
+
+    drawbacks:
+    (1) Uses a magic number 65599 (in some versions)
+    (2) Distribution is a little bit worse than DJB2  
+    (3) the hash can end up being a really large number 
+
+3. Analyze the two methods for resolving collisions in hash tables that were discussed in the lecture slides. Elaborate on the benefits and drawbacks of each method. (At least 3 of each) 
+Answer:
+Open Addressing
+    benefits:
+    (1) Use less memory, because it's using empty spaces in the array
+    (2) Easy to implement
+    (3) Easy to resize the array when we want to grow the hash table
+
+    drawbacks:
+    (1) Cache collison rate depends on how good the hash function is  
+    (2) Liner/Quadratic probing will result in collison
+    (3) Becomes slower than Chaining when load factor is above 0.7
+
+Chaining
+    benefits:
+    (1) Do not take open spaces in the array
+    (2) Easy to implement
+    (3) Usually slower than open addressing 
+
+    drawbacks:
+    (1) Uses more memory
+    (2) Need to use another data structure(linked list)
+    (3) It requires O(n) time to find the item in the linked list
+
+4. What strategies and issues should you consider when you are resizing a hash table? What are the likely complications? How would you address them?
+Answer:
+For performance reasons, when 75% slots of the array are taken, it's time to grow the hash tabel(array). When hash table grows, it also changes the distribution of the hashed keys. Thus, we need to copy the old keys to the growed array.
+    
+
+
+references:
+https://softwareengineering.stackexchange.com/questions/49550/which-hashing-algorithm-is-best-for-uniqueness-and-speed
+http://www.cse.yorku.ca/~oz/hash.html
+https://stackoverflow.com/questions/2556142/chained-hash-tables-vs-open-addressed-hash-tables
